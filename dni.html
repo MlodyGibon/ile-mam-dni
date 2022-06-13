@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dni</title>
+</head>
+<body>
+
+    <h2> Wpisz date </h2>
+    <input type="date" id="data">
+    <button oneclick="oblicz()">Oblicz ile dni minęło</button>
+    <p>Teraz jest:</p>
+    <input type="text" id="aktualny" readonly>
+    <p>Różnica dni to:</p>
+    <input type="text" id="wynik" name="wynik" readonly>
+
+    <script>
+
+        var data = new Date();
+        var aktualny = data.getDate() + "-" + (data.getMonth() + 1) + "-" + data.getFullYear() + " " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
+        document.getElementById("aktualny").value = aktualny;
+        function oblicz() {
+            var dzisiaj = new Date();
+            var wynik = document.getElementById("data").valueAsDate;
+            document.getElementById("wynik").value = Math.floor((dzis.getTime() - wynik.getTime()) / 1000 / 60 / 60 / 24 );
+        }
+    </script>
+
+</body>
+</html>
